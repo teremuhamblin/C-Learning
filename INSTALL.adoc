@@ -1,0 +1,26 @@
+= Installation
+:icons: font
+
+== 🔧 Installation du compilateur C
+
+=== Sur Linux
+[source,bash]
+----
+sudo apt install build-essential
+----
+
+=== Sur macOS
+[source,bash]
+----
+brew install gcc
+----
+
+=== Sur Windows
+Installer *MSYS2* ou *TDM-GCC*.
+
+== ▶️ Tester la compilation
+[source,bash]
+----
+gcc src/hello_world.c -o hello
+./hello
+----
