@@ -1,0 +1,28 @@
+= C-Learning – Cours rapide
+:toc:
+
+== 1. Hello World
+[source,c]
+----
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+----
+
+== 2. Variables
+Explication des types : int, float, char, double…
+
+== 3. Conditions
+if, else, switch…
+
+== 4. Boucles
+for, while, do…while
+
+== 5. Fonctions
+Déclaration, prototypes, retour de valeur.
+
+== 6. Pointeurs
+Introduction simple aux pointeurs et à l’opérateur *
