@@ -1,19 +1,30 @@
-= VERSION — C-Learning
+= VERSION — C-Learning v5.0.0 MASTER CLASS
 Teremu
 :icons: font
 :toc:
+:source-highlighter: coderay
 
 == 🎯 Objectif
 Ce document décrit les versions officielles du projet C-Learning, leurs objectifs,
-leurs évolutions et leur statut. Il sert de référence interne pour le suivi du
-développement et la planification des futures mises à jour.
+leurs évolutions et leur statut. Il constitue la référence interne pour le suivi
+du développement, la planification stratégique et la gouvernance du projet.
 
-== 🧩 Version actuelle
-*Version stable:* **v1.0.0**  
+------------------------------------------------------------
+== 🧩 Version actuelle (MASTER CLASS)
+------------------------------------------------------------
+
+*Version stable:* **v5.0.0 — MASTER CLASS**  
 *Branche principale:* `main`  
-*Branche de développement:* `developp`
+*Branche de développement:* `developp`  
+*Branche expérimentale:* `experiment/*`  
 
+La version v5.0.0 marque l’entrée du projet dans une formation professionnelle
+complète, incluant optimisation, sécurité avancée, architecture logicielle et
+projet final C‑Engine v1.0.
+
+------------------------------------------------------------
 == 🗂️ Historique des versions
+------------------------------------------------------------
 
 === v1.0.0 — Release initiale (Stable)
 - Structure complète du projet
@@ -22,49 +33,94 @@ développement et la planification des futures mises à jour.
 - Documentation AsciiDoc
 - Makefile minimaliste
 
-=== v1.1.0 — Améliorations pédagogiques (Planifiée)
+=== v1.1.0 — Améliorations pédagogiques (Livrée)
 - Commentaires détaillés
 - Exercices intermédiaires
 - Bonnes pratiques C
 - Exemples d’erreurs courantes
+- Documentation enrichie
 
-=== v1.2.0 — Tests & Qualité (Planifiée)
+=== v1.2.0 — Tests & Qualité (Livrée)
 - Tests unitaires
 - Script de tests
 - CI GitHub Actions
 - Documentation debugging
+- Analyse statique initiale
 
-=== v2.0.0 — Modules avancés (Planifiée)
+=== v2.0.0 — Modules avancés (Livrée)
 - Mémoire dynamique
 - Fichiers
 - Structures complexes
 - Exercices intermédiaires
+- Makefile avancé
 
-=== v3.0.0 — Architecture professionnelle (Planifiée)
+=== v3.0.0 — Architecture professionnelle (Livrée)
 - Mini-projets complets
-- Makefile pro
+- Makefile pro multi-modules
 - GDB / Valgrind
 - Architecture C avancée
+- API internes
 
-=== v4.0.0 — Sécurité & Optimisation (Planifiée)
+=== v4.0.0 — Sécurité & Optimisation (Livrée)
 - Buffer overflow
 - Stack smashing
-- Analyse mémoire
+- Analyse mémoire avancée
 - Scanner statique
+- Compilation sécurisée
+- Sanitizers (ASan / UBSan)
 
-=== v5.0.0 — Masterclass (Planifiée)
+=== v5.0.0 — MASTER CLASS (Stable)
 - Pointeurs avancés
-- Optimisation compilation
-- Projet final C-Master
-- Certification interne
+- Optimisation compilation (O3, LTO, march=native)
+- Debugging avancé (gdb, valgrind, sanitizers)
+- Architecture modulaire professionnelle
+- Projet final C‑Engine v1.0
+- Certification interne C-Learning
+- Makefile MASTER CLASS
+- Documentation complète v5.0.0
 
-== 📌 Politique de versionnage
-Le projet utilise le versionnage *SemVer* :
-- MAJEUR : changements structurels
-- MINEUR : ajouts pédagogiques
-- PATCH : corrections mineures
+------------------------------------------------------------
+== 🚀 Vision future (pré‑planification)
+------------------------------------------------------------
 
-== 🛡️ Stabilité
-- `main` : stable
-- `developp` : en développement
-- `feature/*` : expérimental
+=== v6.0.0 — ULTRA MASTER CLASS (Planifiée)
+- Analyse mémoire automatique
+- Allocateur mémoire personnalisé
+- Bibliothèques dynamiques (.so)
+- Profiling avancé (perf, llvm-profdata)
+- Système de modules dynamiques
+- C‑Engine v2.0
+
+=== v7.0.0 — Quantum‑Era Edition (Concept)
+- Compilation hybride GCC/Clang
+- Analyse statique IA
+- Optimisation automatique
+- Sécurité renforcée BlueSecurity v2.0
+- Projet final : C‑Kernel v1.0
+
+------------------------------------------------------------
+== 📌 Politique de versionnage (SemVer MASTER CLASS)
+------------------------------------------------------------
+
+- **MAJEUR** : changements structurels, architecture, sécurité, refonte globale  
+- **MINEUR** : ajouts pédagogiques, nouveaux modules, nouvelles fonctionnalités  
+- **PATCH** : corrections mineures, documentation, ajustements  
+
+Règle :  
+> Toute version MAJEURE doit être validée par un reviewer MASTER CLASS.
+
+------------------------------------------------------------
+== 🛡️ Stabilité des branches
+------------------------------------------------------------
+
+- `main` : stable, production  
+- `developp` : développement actif  
+- `feature/*` : nouvelles fonctionnalités  
+- `fix/*` : corrections  
+- `experiment/*` : prototypes avancés  
+
+------------------------------------------------------------
+== 📜 Conclusion
+Ce document constitue la référence officielle du versionnage du projet
+C-Learning v5.0.0 MASTER CLASS. Toute modification doit être validée
+et documentée dans le CHANGELOG et la ROADMAP.

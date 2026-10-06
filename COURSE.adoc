@@ -1,7 +1,20 @@
-= C-Learning – Cours rapide
+= C-Learning – MASTER CLASS v5.0.0
 :toc:
+:icons: font
+:source-highlighter: coderay
 
-== 1. Hello World
+== 🧠 Introduction
+Ce document est la version MASTER CLASS du cours C-Learning.
+Il couvre les bases, l’intermédiaire, l’avancé, l’architecture logicielle
+et les techniques professionnelles d’optimisation et de sécurité.
+
+Le but : transformer l’étudiant en **développeur C expert**.
+
+------------------------------------------------------------
+== 🟦 NIVEAU 1 — Fondamentaux (v1.0)
+------------------------------------------------------------
+
+=== 1. Hello World
 [source,c]
 ----
 #include <stdio.h>
@@ -12,17 +25,170 @@ int main() {
 }
 ----
 
-== 2. Variables
-Explication des types : int, float, char, double…
+=== 2. Variables
+Types fondamentaux :
+- int
+- float
+- double
+- char
+- unsigned / signed
+- const
 
-== 3. Conditions
-if, else, switch…
+=== 3. Conditions
+- if / else
+- switch / case
+- opérateurs logiques
 
-== 4. Boucles
-for, while, do…while
+=== 4. Boucles
+- for
+- while
+- do…while
 
-== 5. Fonctions
-Déclaration, prototypes, retour de valeur.
+=== 5. Fonctions
+- prototypes
+- paramètres
+- retour de valeur
+- portée des variables
 
-== 6. Pointeurs
-Introduction simple aux pointeurs et à l’opérateur *
+=== 6. Pointeurs (introduction)
+- opérateur *
+- opérateur &
+- pointeur vers int, char, float
+
+------------------------------------------------------------
+== 🟩 NIVEAU 2 — Intermédiaire (v2.0)
+------------------------------------------------------------
+
+=== 7. Structures
+Définition, utilisation, passage en paramètre.
+
+=== 8. Fichiers
+- fopen, fclose
+- fread, fwrite
+- fprintf, fscanf
+
+=== 9. Modularité
+- headers (.h)
+- séparation logique
+- compilation multi-fichiers
+
+=== 10. Makefile avancé
+- règles
+- variables
+- dépendances
+- phony targets
+
+------------------------------------------------------------
+== 🟥 NIVEAU 3 — Avancé (v3.0)
+------------------------------------------------------------
+
+=== 11. Pointeurs avancés
+- pointeurs de fonctions
+- pointeurs multiples
+- pointeurs vers structures
+
+=== 12. Mémoire dynamique
+[source,c]
+----
+int *ptr = malloc(sizeof(int) * 10);
+if (!ptr) return -1;
+----
+
+- malloc
+- calloc
+- realloc
+- free
+
+=== 13. Heap vs Stack
+- allocation automatique
+- allocation dynamique
+- durée de vie des variables
+
+=== 14. Gestion d’erreurs
+- codes de retour
+- errno
+- messages d’erreurs
+
+------------------------------------------------------------
+== 🟧 NIVEAU 4 — Architecture logicielle (v4.0)
+------------------------------------------------------------
+
+=== 15. API internes
+- fonctions publiques
+- fonctions privées (static)
+- encapsulation
+
+=== 16. Organisation logicielle
+- modules
+- dossiers
+- interfaces
+- logique métier
+
+=== 17. Patterns en C
+- module pattern
+- callback pattern
+- dispatcher pattern
+
+=== 18. Bibliothèques
+- compilation en .a
+- compilation en .so
+- utilisation via headers
+
+------------------------------------------------------------
+== 🟪 NIVEAU 5 — MASTER CLASS (v5.0.0)
+------------------------------------------------------------
+
+=== 19. Optimisation
+- -O2 / -O3
+- -march=native
+- -flto
+- unrolling loops
+- inline functions
+
+=== 20. Debugging avancé
+==== gdb
+- breakpoints
+- watchpoints
+- backtrace
+
+==== valgrind
+- memcheck
+- leak-check
+- stack-trace
+
+==== AddressSanitizer
+- buffer overflow
+- use-after-free
+- double free
+
+=== 21. Sécurité logicielle
+- protection contre les débordements
+- vérification des pointeurs NULL
+- gestion stricte des erreurs
+- FORTIFY_SOURCE
+- stack protector
+
+=== 22. Projet final — C-Engine v1.0
+Contenu :
+- architecture modulaire
+- gestion d’événements
+- modules dynamiques
+- API interne
+- compilation optimisée
+- sécurité renforcée
+
+------------------------------------------------------------
+== 🧪 Exercices MASTER CLASS
+------------------------------------------------------------
+
+=== Défis experts
+- créer une bibliothèque dynamique (.so)
+- implémenter un allocateur mémoire
+- écrire un parser de fichiers
+- optimiser un programme x10
+- détecter et corriger des failles mémoire
+- construire un moteur logiciel complet
+
+------------------------------------------------------------
+== 📜 Licence
+Projet libre pour l’apprentissage et la formation professionnelle.

@@ -1,26 +1,159 @@
-= Installation
+= Installation — C-Learning v5.0.0 MASTER CLASS
 :icons: font
+:toc:
+:source-highlighter: coderay
 
+== 🧠 Introduction
+Cette version MASTER CLASS nécessite un environnement de développement complet :
+compilateur C, outils de debugging, analyse mémoire, optimisation et sécurité.
+
+Ce guide installe tout ce qui est requis pour suivre la formation v5.0.0.
+
+------------------------------------------------------------
 == 🔧 Installation du compilateur C
+------------------------------------------------------------
 
-=== Sur Linux
+=== 🐧 Linux (Debian/Ubuntu)
 [source,bash]
 ----
-sudo apt install build-essential
+sudo apt update
+sudo apt install build-essential gcc clang make
 ----
 
-=== Sur macOS
+=== 🍎 macOS
 [source,bash]
 ----
-brew install gcc
+brew update
+brew install gcc clang make
 ----
 
-=== Sur Windows
-Installer *MSYS2* ou *TDM-GCC*.
-
-== ▶️ Tester la compilation
+=== 🪟 Windows (MSYS2 recommandé)
+1. Installer MSYS2 : https://www.msys2.org
+2. Ouvrir MSYS2 MinGW64
 [source,bash]
 ----
-gcc src/hello_world.c -o hello
+pacman -Syu
+pacman -S mingw-w64-x86_64-gcc make
+----
+
+Alternative : TDM-GCC (moins recommandé).
+
+------------------------------------------------------------
+== 🛠️ Installation des outils MASTER CLASS
+------------------------------------------------------------
+
+=== 🔍 gdb — Debugger
+[source,bash]
+----
+sudo apt install gdb
+brew install gdb
+pacman -S mingw-w64-x86_64-gdb
+----
+
+=== 🧪 valgrind — Analyse mémoire
+(Linux uniquement)
+[source,bash]
+----
+sudo apt install valgrind
+----
+
+=== 🛡️ AddressSanitizer (ASan)
+Inclus dans GCC/Clang récents.
+
+=== 📈 Outils d’optimisation
+- perf (Linux)
+[source,bash]
+----
+sudo apt install linux-tools-common linux-tools-generic
+----
+
+- llvm-tools (macOS)
+[source,bash]
+----
+brew install llvm
+----
+
+------------------------------------------------------------
+== ▶️ Tester la compilation (niveau 1)
+------------------------------------------------------------
+
+=== Compilation simple
+[source,bash]
+----
+gcc src/basic/hello_world.c -o hello
 ./hello
 ----
+
+=== Compilation multi-fichiers
+[source,bash]
+----
+make basic
+----
+
+------------------------------------------------------------
+== 🛡️ Tester la compilation sécurisée (MASTER CLASS)
+------------------------------------------------------------
+
+[source,bash]
+----
+gcc -Wall -Wextra -Werror -fstack-protector-all \
+    -D_FORTIFY_SOURCE=2 src/masterclass/security_test.c -o sec_test
+----
+
+Exécution :
+[source,bash]
+----
+./sec_test
+----
+
+------------------------------------------------------------
+== 🚀 Tester la compilation optimisée (MASTER CLASS)
+------------------------------------------------------------
+
+[source,bash]
+----
+gcc -O3 -march=native -flto -funroll-loops \
+    src/masterclass/optimize_test.c -o opt_test
+----
+
+Exécution :
+[source,bash]
+----
+./opt_test
+----
+
+------------------------------------------------------------
+== 🧪 Tester l’analyse mémoire
+------------------------------------------------------------
+
+=== Avec valgrind
+[source,bash]
+----
+valgrind --leak-check=full ./hello
+----
+
+=== Avec AddressSanitizer
+[source,bash]
+----
+gcc -fsanitize=address -g src/masterclass/asan_test.c -o asan_test
+./asan_test
+----
+
+------------------------------------------------------------
+== 🧩 Vérification de l’environnement MASTER CLASS
+------------------------------------------------------------
+
+[source,bash]
+----
+gcc --version
+clang --version
+make --version
+gdb --version
+valgrind --version
+----
+
+Si tous répondent → environnement MASTER CLASS opérationnel.
+
+------------------------------------------------------------
+== 📜 Fin de l’installation
+Votre système est prêt pour C-Learning v5.0.0 MASTER CLASS.

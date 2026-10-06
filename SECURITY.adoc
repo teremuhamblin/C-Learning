@@ -1,60 +1,169 @@
-= SECURITY — C-Learning
+= SECURITY — C-Learning v5.0.0 MASTER CLASS
 :icons: font
 :toc:
+:source-highlighter: coderay
 
 == 🎯 Objectif
-Ce document définit les règles de sécurité, bonnes pratiques et protections
-à appliquer dans le cadre du projet C-Learning, afin d’éviter les erreurs
-classiques du langage C et d’assurer un environnement d’apprentissage sûr.
+Ce document définit les règles de sécurité avancées du programme C-Learning v5.0.0.
+Il couvre les risques mémoire, les protections de compilation, les outils d’analyse
+professionnels et les politiques internes obligatoires pour tout code ajouté au dépôt.
 
-== 🔐 Risques courants en C
-- Buffer overflow
-- Stack smashing
-- Utilisation de pointeurs invalides
-- Fuites mémoire (malloc sans free)
-- Accès mémoire hors limites
+Objectif : garantir un environnement d’apprentissage **robuste, sécurisé et conforme
+aux standards industriels**.
+
+------------------------------------------------------------
+== 🔐 Risques courants en C (niveau MASTER CLASS)
+------------------------------------------------------------
+
+- Buffer overflow (débordement de tampon)
+- Stack smashing (corruption de pile)
+- Heap corruption (corruption mémoire dynamique)
+- Use-after-free
+- Double free
+- Dangling pointers
+- Out-of-bounds access
 - Format string vulnerabilities
-- Utilisation de fonctions dangereuses (gets, strcpy…)
+- Integer overflow / underflow
+- Race conditions (rare mais possibles en C multithread)
+- Fonctions dangereuses (gets, strcpy, sprintf…)
 
-== 🛡️ Bonnes pratiques obligatoires
-- Toujours vérifier les retours de `malloc`
+------------------------------------------------------------
+== 🛡️ Bonnes pratiques obligatoires (v5.0.0)
+------------------------------------------------------------
+
+- Toujours vérifier les retours de `malloc`, `calloc`, `realloc`
 - Toujours initialiser les variables
 - Toujours vérifier les limites des tableaux
+- Toujours vérifier les pointeurs avant utilisation
 - Toujours utiliser `fgets` au lieu de `gets`
-- Toujours utiliser `strncpy` au lieu de `strcpy`
-- Toujours compiler avec :
+- Toujours utiliser `strncpy` ou `snprintf`
+- Toujours séparer logique / sécurité / validation
+- Toujours compiler avec des flags stricts
+
+Compilation minimale obligatoire :
 [source,bash]
 ----
 gcc -Wall -Wextra -Werror -std=c11
 ----
 
-== 🧪 Tests & Analyse
-- Utiliser `valgrind` pour détecter les fuites mémoire
-- Utiliser `gdb` pour analyser les crashs
-- Utiliser `cppcheck` pour l’analyse statique
-
-== 🧰 Outils recommandés
-- Valgrind
-- GDB
-- Cppcheck
-- AddressSanitizer (ASan)
-- UndefinedBehaviorSanitizer (UBSan)
-
-== 🚫 Fonctions interdites
-- gets()
-- strcpy()
-- sprintf()
-- scanf("%s")
-
-== 🧱 Compilation sécurisée
+Compilation sécurisée MASTER CLASS :
 [source,bash]
 ----
-gcc -Wall -Wextra -Werror -O2 -fstack-protector-all -D_FORTIFY_SOURCE=2
+gcc -Wall -Wextra -Werror -O2 \
+    -fstack-protector-all -D_FORTIFY_SOURCE=2 \
+    -Wshadow -Wconversion -Wdouble-promotion
 ----
 
-== 📜 Politique interne
-Tout code ajouté au projet doit :
-- respecter les bonnes pratiques ci-dessus
+------------------------------------------------------------
+== 🧪 Tests & Analyse (niveau professionnel)
+------------------------------------------------------------
+
+=== 🔍 Analyse mémoire dynamique
+- `valgrind --leak-check=full`
+- `valgrind --track-origins=yes`
+- `valgrind --show-leak-kinds=all`
+
+=== 🧭 Debugging avancé
+- gdb (breakpoints, watchpoints, backtrace)
+- gdb + core dumps
+
+=== 🛡️ Analyse par sanitizers
+==== AddressSanitizer (ASan)
+Détection :
+- buffer overflow
+- heap overflow
+- use-after-free
+- double free
+
+Compilation :
+[source,bash]
+----
+gcc -fsanitize=address -g file.c -o prog
+----
+
+==== UndefinedBehaviorSanitizer (UBSan)
+Détection :
+- integer overflow
+- division par zéro
+- accès invalides
+
+Compilation :
+[source,bash]
+----
+gcc -fsanitize=undefined -g file.c -o prog
+----
+
+==== MemorySanitizer (MSan)
+Détection :
+- utilisation de mémoire non initialisée
+
+Compilation :
+[source,bash]
+----
+clang -fsanitize=memory -g file.c -o prog
+----
+
+=== 🧱 Analyse statique
+- cppcheck
+- clang-tidy
+- scan-build (LLVM)
+
+------------------------------------------------------------
+== 🧰 Outils recommandés (MASTER CLASS)
+------------------------------------------------------------
+
+- Valgrind (analyse mémoire)
+- GDB (debugging avancé)
+- Cppcheck (analyse statique)
+- AddressSanitizer (ASan)
+- UndefinedBehaviorSanitizer (UBSan)
+- MemorySanitizer (MSan)
+- perf (profiling Linux)
+- llvm-profdata / llvm-cov (profiling Clang)
+- strace / ltrace (analyse système)
+
+------------------------------------------------------------
+== 🚫 Fonctions interdites (v5.0.0)
+------------------------------------------------------------
+
+- gets()
+- strcpy()
+- strcat()
+- sprintf()
+- scanf("%s")
+- atoi() (non sécurisé)
+- strncpy() mal utilisé (sans vérification de terminaison)
+
+------------------------------------------------------------
+== 🧱 Compilation sécurisée (MASTER CLASS)
+------------------------------------------------------------
+
+[source,bash]
+----
+gcc -Wall -Wextra -Werror \
+    -O2 -fstack-protector-all -D_FORTIFY_SOURCE=2 \
+    -Wshadow -Wconversion -Wdouble-promotion \
+    -std=c11 src/masterclass/*.c -o master_sec
+----
+
+------------------------------------------------------------
+== 🛡️ Politique interne MASTER CLASS
+------------------------------------------------------------
+
+Tout code ajouté au projet doit obligatoirement :
+
+- respecter toutes les bonnes pratiques ci-dessus
 - être compilé avec les flags de sécurité
 - être testé avec Valgrind
+- être testé avec ASan ou UBSan selon le module
+- être analysé avec cppcheck
+- être documenté dans `docs/`
 - être validé par un reviewer
+- ne jamais introduire de fonctions dangereuses
+- ne jamais ignorer un warning
+- ne jamais utiliser de pointeur sans validation
+
+------------------------------------------------------------
+== 📜 Conclusion
+Ce document constitue la base de la sécurité du programme C-Learning v5.0.0 MASTER CLASS.
+Toute violation de ces règles entraîne un rejet automatique du code.
