@@ -1,50 +1,159 @@
-= C-Learning v1.0
-Teremu – Projet éducatif pour apprendre le langage C
+= C-Learning v5.0.0 — MASTER CLASS
+Teremu — Programme avancé pour devenir expert en langage C
 :toc:
 :icons: font
+:source-highlighter: coderay
 
-== 🎯 Objectif
-C-Learning est un projet simple et structuré pour apprendre les bases du langage C à travers
-des exemples courts, des exercices progressifs et un environnement minimaliste compatible
-avec tous les systèmes.
+== 🧠 Vision MASTER CLASS
+C-Learning v5.0.0 est la version ultime du programme d’apprentissage du langage C.
+Cette édition MASTER CLASS transforme le dépôt en une formation complète couvrant :
 
-== 📁 Structure du projet
-- *src/* : exemples de base du langage C
-- *exercises/* : exercices pratiques à réaliser
-- *docs/* : documentation du cours
-- *Makefile* : compilation rapide
+- Les bases du C (v1.0)
+- La programmation structurée (v2.0)
+- La mémoire dynamique & pointeurs avancés (v3.0)
+- L’architecture logicielle & modules (v4.0)
+- L’optimisation, la sécurité, le debugging & les projets réels (v5.0.0)
 
-== 🚀 Compilation
-Pour compiler un fichier :
+Objectif : **former un développeur C professionnel**, capable de créer des logiciels
+robustes, performants, sécurisés et maintenables.
 
-[source,bash]
-----
-make hello
-----
+== 🏗️ Structure du projet (v5.0.0)
+- *src/basic/* : fondamentaux du C (v1.0)
+- *src/intermediate/* : structures, fichiers, modularité (v2.0)
+- *src/advanced/* : pointeurs avancés, mémoire dynamique, heap, stack (v3.0)
+- *src/architecture/* : modules, API internes, organisation logicielle (v4.0)
+- *src/masterclass/* : optimisation, sécurité, debugging, projets réels (v5.0.0)
 
-Pour compiler tous les fichiers :
+- *exercises/basic/* : exercices débutants
+- *exercises/intermediate/* : exercices intermédiaires
+- *exercises/advanced/* : exercices avancés
+- *exercises/masterclass/* : défis experts & projets complets
 
+- *docs/* : documentation complète (cours, guides, références)
+- *Makefile* : compilation multi-niveaux (basic → masterclass)
+
+== 🚀 Compilation (v5.0.0)
+=== Compilation standard
 [source,bash]
 ----
 make all
 ----
 
-== 📚 Contenu pédagogique
-- Variables et types
+=== Compilation par niveau
+[source,bash]
+----
+make basic
+make intermediate
+make advanced
+make masterclass
+----
+
+=== Compilation optimisée (MASTER CLASS)
+[source,bash]
+----
+make optimize
+----
+
+Active :
+- -O3 optimisation agressive
+- -march=native
+- -flto (Link Time Optimization)
+- -funroll-loops
+- -DNDEBUG
+
+=== Compilation sécurisée
+[source,bash]
+----
+make secure
+----
+
+Active :
+- -Wall -Wextra -Werror
+- -fstack-protector-all
+- -D_FORTIFY_SOURCE=2
+- -Wshadow -Wconversion -Wdouble-promotion
+
+== 📚 Contenu pédagogique MASTER CLASS
+=== Niveau 1 — Fondamentaux (v1.0)
+- Variables & types
 - Conditions
 - Boucles
 - Fonctions
 - Tableaux
-- Chaînes de caractères
-- Pointeurs
+- Chaînes
+- Pointeurs simples
 
-== 🧪 Exercices
-Les exercices sont dans le dossier *exercises/* et classés par difficulté.
+=== Niveau 2 — Intermédiaire (v2.0)
+- Structures
+- Fichiers
+- Modularité
+- Headers & prototypes
+- Makefile avancé
 
-== 🛠️ Prérequis
+=== Niveau 3 — Avancé (v3.0)
+- Pointeurs avancés
+- Pointeurs de fonctions
+- Allocation dynamique (malloc, calloc, realloc)
+- Gestion de la mémoire (heap / stack)
+- Analyse mémoire
+
+=== Niveau 4 — Architecture (v4.0)
+- Architecture modulaire
+- API internes
+- Organisation logicielle
+- Séparation logique / technique
+- Gestion d’erreurs professionnelle
+
+=== Niveau 5 — MASTER CLASS (v5.0.0)
+- Optimisation du code C
+- Debugging avancé (gdb, valgrind, ASan)
+- Sécurité logicielle (buffer overflow, integer overflow)
+- Conception de bibliothèques C
+- Gestion de projets réels
+- Patterns de conception en C
+- Création d’un moteur logiciel complet
+- Projet final : **C-Engine v1.0**
+
+== 🧪 Exercices & Défis MASTER CLASS
+Les exercices sont classés par niveau :
+
+- *basic/* → fondamentaux
+- *intermediate/* → logique & structures
+- *advanced/* → mémoire & pointeurs
+- *masterclass/* → défis experts
+
+=== Exemples MASTER CLASS
+- Implémenter une bibliothèque dynamique (.so)
+- Créer un allocateur mémoire personnalisé
+- Construire un moteur de modules en C
+- Écrire un parser de fichiers
+- Optimiser un programme x10
+- Détecter et corriger des failles de sécurité
+
+== 🛠️ Prérequis MASTER CLASS
 - GCC ou Clang
 - Make
-- Un terminal
+- gdb
+- valgrind
+- AddressSanitizer
+- Un terminal Linux/macOS (recommandé)
+
+== 🔐 Sécurité (v5.0.0)
+- Compilation sécurisée
+- Analyse mémoire automatique
+- Vérification des pointeurs NULL
+- Protection contre les débordements
+- Règles strictes de gestion d’erreurs
+
+== 🧩 Projet final — C-Engine v1.0
+La version MASTER CLASS inclut un projet complet :
+
+- Architecture modulaire
+- Gestion d’événements
+- Système de modules dynamiques
+- API interne documentée
+- Compilation optimisée
+- Sécurité renforcée
 
 == 📜 Licence
-Projet libre pour l’apprentissage.
+Projet libre pour l’apprentissage et la formation professionnelle.
