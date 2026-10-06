@@ -50,3 +50,49 @@
 - Ajout projet final “C‑Master”
 - Ajout documentation “C avancé & optimisation”
 - Ajout certification interne C-Learning
+- Ajout Makefile MASTER CLASS
+- Ajout SECURITY.adoc, VERSION.adoc, CONTRIBUTING.adoc v5.0.0
+
+## [v6.0.0] — Ultra Masterclass
+- Ajout allocateur mémoire personnalisé (mini‑malloc)
+- Ajout bibliothèque dynamique (.so) pédagogique
+- Ajout profiling avancé (perf, llvm-profdata)
+- Ajout modules dynamiques chargés à runtime
+- Ajout C‑Engine v2.0 (architecture modulaire avancée)
+- Ajout tests ASan / UBSan obligatoires
+- Ajout documentation “Profiling & Performance”
+
+## [v7.0.0] — Architecture Quantum
+- Ajout architecture hybride GCC/Clang
+- Ajout analyse statique IA (clang‑tidy + règles internes)
+- Ajout système de modules plug‑and‑play
+- Ajout gestion d’événements avancée (EventBus v2)
+- Ajout C‑Engine v3.0 (moteur modulaire complet)
+- Ajout SECURITY Quantum‑Era v2.0
+- Ajout Makefile Quantum‑Era
+
+## [v8.0.0] — Sécurité Totale
+- Ajout BlueSecurity v3.0 (doctrine interne)
+- Ajout sandbox d’exécution pour modules
+- Ajout vérification automatique des pointeurs
+- Ajout scanner mémoire interne (MemoryGuard)
+- Ajout tests automatiques de sécurité CI/CD
+- Ajout documentation “Sécurité avancée & sandboxing”
+
+## [v9.0.0] — Optimisation Extrême
+- Ajout compilation multi‑toolchain (GCC, Clang, TinyCC)
+- Ajout optimisation automatique via scripts IA
+- Ajout vectorisation automatique (SSE/AVX)
+- Ajout LTO + PGO (Profile Guided Optimization)
+- Ajout C‑Engine v4.0 (optimisé AVX)
+- Ajout documentation “Optimisation extrême”
+
+## [v10.0.0] — Quantum‑Era Edition (Stable)
+- Ajout architecture Quantum‑Era complète
+- Ajout C‑Kernel v1.0 (noyau logiciel minimaliste en C)
+- Ajout compilation hybride multi‑niveaux (Quantum‑Build)
+- Ajout analyse statique IA v2.0
+- Ajout sécurité BlueSecurity v4.0
+- Ajout gestion mémoire intelligente (SmartAlloc)
+- Ajout documentation “Quantum‑Era Programming”
+- Ajout certification Quantum‑Era C‑Learning
