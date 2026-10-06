@@ -1,0 +1,50 @@
+= C-Learning v1.0
+Teremu – Projet éducatif pour apprendre le langage C
+:toc:
+:icons: font
+
+== 🎯 Objectif
+C-Learning est un projet simple et structuré pour apprendre les bases du langage C à travers
+des exemples courts, des exercices progressifs et un environnement minimaliste compatible
+avec tous les systèmes.
+
+== 📁 Structure du projet
+- *src/* : exemples de base du langage C
+- *exercises/* : exercices pratiques à réaliser
+- *docs/* : documentation du cours
+- *Makefile* : compilation rapide
+
+== 🚀 Compilation
+Pour compiler un fichier :
+
+[source,bash]
+----
+make hello
+----
+
+Pour compiler tous les fichiers :
+
+[source,bash]
+----
+make all
+----
+
+== 📚 Contenu pédagogique
+- Variables et types
+- Conditions
+- Boucles
+- Fonctions
+- Tableaux
+- Chaînes de caractères
+- Pointeurs
+
+== 🧪 Exercices
+Les exercices sont dans le dossier *exercises/* et classés par difficulté.
+
+== 🛠️ Prérequis
+- GCC ou Clang
+- Make
+- Un terminal
+
+== 📜 Licence
+Projet libre pour l’apprentissage.
