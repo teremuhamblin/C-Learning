@@ -1,0 +1,70 @@
+= VERSION — C-Learning
+Teremu
+:icons: font
+:toc:
+
+== 🎯 Objectif
+Ce document décrit les versions officielles du projet C-Learning, leurs objectifs,
+leurs évolutions et leur statut. Il sert de référence interne pour le suivi du
+développement et la planification des futures mises à jour.
+
+== 🧩 Version actuelle
+*Version stable:* **v1.0.0**  
+*Branche principale:* `main`  
+*Branche de développement:* `developp`
+
+== 🗂️ Historique des versions
+
+=== v1.0.0 — Release initiale (Stable)
+- Structure complète du projet
+- Fichiers C pédagogiques
+- Exercices débutants
+- Documentation AsciiDoc
+- Makefile minimaliste
+
+=== v1.1.0 — Améliorations pédagogiques (Planifiée)
+- Commentaires détaillés
+- Exercices intermédiaires
+- Bonnes pratiques C
+- Exemples d’erreurs courantes
+
+=== v1.2.0 — Tests & Qualité (Planifiée)
+- Tests unitaires
+- Script de tests
+- CI GitHub Actions
+- Documentation debugging
+
+=== v2.0.0 — Modules avancés (Planifiée)
+- Mémoire dynamique
+- Fichiers
+- Structures complexes
+- Exercices intermédiaires
+
+=== v3.0.0 — Architecture professionnelle (Planifiée)
+- Mini-projets complets
+- Makefile pro
+- GDB / Valgrind
+- Architecture C avancée
+
+=== v4.0.0 — Sécurité & Optimisation (Planifiée)
+- Buffer overflow
+- Stack smashing
+- Analyse mémoire
+- Scanner statique
+
+=== v5.0.0 — Masterclass (Planifiée)
+- Pointeurs avancés
+- Optimisation compilation
+- Projet final C-Master
+- Certification interne
+
+== 📌 Politique de versionnage
+Le projet utilise le versionnage *SemVer* :
+- MAJEUR : changements structurels
+- MINEUR : ajouts pédagogiques
+- PATCH : corrections mineures
+
+== 🛡️ Stabilité
+- `main` : stable
+- `developp` : en développement
+- `feature/*` : expérimental

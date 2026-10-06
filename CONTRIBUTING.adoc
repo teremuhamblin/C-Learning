@@ -1,0 +1,82 @@
+= CONTRIBUTING — C-Learning
+Teremu
+:icons: font
+:toc:
+
+== 🎯 Objectif
+Ce document explique comment contribuer au projet C-Learning, les règles à suivre,
+les bonnes pratiques, et les procédures de développement.
+
+== 🪖 Code de conduite
+- Respect du style pédagogique du projet
+- Respect des bonnes pratiques C
+- Respect des règles de sécurité (voir SECURITY.adoc)
+- Aucun code non testé ne doit être poussé sur `main`
+
+== 🧱 Structure des branches
+- `main` : version stable
+- `developp` : développement actif
+- `feature/<nom>` : nouvelles fonctionnalités
+- `fix/<nom>` : corrections
+
+== 🔧 Procédure pour contribuer
+
+=== 1. Créer une branche
+[source,bash]
+----
+git checkout developp
+git checkout -b feature/nom_de_la_feature
+----
+
+=== 2. Ajouter du code
+- Code C clair, commenté, pédagogique
+- Respect des standards C11
+- Compilation obligatoire avec :
+[source,bash]
+----
+gcc -Wall -Wextra -Werror -std=c11
+----
+
+=== 3. Tests
+- Tous les fichiers doivent compiler sans warnings
+- Les exercices doivent fonctionner
+- Les modules avancés doivent être testés avec Valgrind
+
+=== 4. Commit propre
+[source,bash]
+----
+git commit -m "feat: ajout module mémoire dynamique"
+----
+
+=== 5. Pull Request
+- PR vers `developp`
+- Description claire
+- Checklist complétée
+- Aucun merge direct vers `main` sans validation
+
+== 🧪 Style de code
+- Indentation : 4 espaces
+- Noms de variables explicites
+- Pas de variables globales inutiles
+- Pas de magie (valeurs non expliquées)
+- Commentaires pédagogiques obligatoires
+
+== 🛡️ Sécurité
+- Interdiction des fonctions dangereuses (gets, strcpy…)
+- Vérification systématique des retours de malloc
+- Vérification des limites des tableaux
+- Utilisation de `fgets`, `strncpy`, `snprintf`
+
+== 📚 Documentation
+Toute nouvelle fonctionnalité doit être documentée dans :
+- `docs/COURSE.adoc`
+- `docs/README.adoc`
+- `CHANGELOG.md`
+- `ROADMAP.md`
+
+== 🚀 Publication
+Les versions stables sont publiées uniquement sur `main` après :
+- Validation du code
+- Validation des tests
+- Mise à jour du CHANGELOG
+- Mise à jour de VERSION.adoc

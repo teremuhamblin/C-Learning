@@ -1,0 +1,60 @@
+= SECURITY — C-Learning
+:icons: font
+:toc:
+
+== 🎯 Objectif
+Ce document définit les règles de sécurité, bonnes pratiques et protections
+à appliquer dans le cadre du projet C-Learning, afin d’éviter les erreurs
+classiques du langage C et d’assurer un environnement d’apprentissage sûr.
+
+== 🔐 Risques courants en C
+- Buffer overflow
+- Stack smashing
+- Utilisation de pointeurs invalides
+- Fuites mémoire (malloc sans free)
+- Accès mémoire hors limites
+- Format string vulnerabilities
+- Utilisation de fonctions dangereuses (gets, strcpy…)
+
+== 🛡️ Bonnes pratiques obligatoires
+- Toujours vérifier les retours de `malloc`
+- Toujours initialiser les variables
+- Toujours vérifier les limites des tableaux
+- Toujours utiliser `fgets` au lieu de `gets`
+- Toujours utiliser `strncpy` au lieu de `strcpy`
+- Toujours compiler avec :
+[source,bash]
+----
+gcc -Wall -Wextra -Werror -std=c11
+----
+
+== 🧪 Tests & Analyse
+- Utiliser `valgrind` pour détecter les fuites mémoire
+- Utiliser `gdb` pour analyser les crashs
+- Utiliser `cppcheck` pour l’analyse statique
+
+== 🧰 Outils recommandés
+- Valgrind
+- GDB
+- Cppcheck
+- AddressSanitizer (ASan)
+- UndefinedBehaviorSanitizer (UBSan)
+
+== 🚫 Fonctions interdites
+- gets()
+- strcpy()
+- sprintf()
+- scanf("%s")
+
+== 🧱 Compilation sécurisée
+[source,bash]
+----
+gcc -Wall -Wextra -Werror -O2 -fstack-protector-all -D_FORTIFY_SOURCE=2
+----
+
+== 📜 Politique interne
+Tout code ajouté au projet doit :
+- respecter les bonnes pratiques ci-dessus
+- être compilé avec les flags de sécurité
+- être testé avec Valgrind
+- être validé par un reviewer
