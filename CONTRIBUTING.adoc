@@ -1,25 +1,43 @@
-= CONTRIBUTING — C-Learning
+= CONTRIBUTING — C-Learning v5.0.0 MASTER CLASS
 Teremu
 :icons: font
 :toc:
+:source-highlighter: coderay
 
 == 🎯 Objectif
-Ce document explique comment contribuer au projet C-Learning, les règles à suivre,
-les bonnes pratiques, et les procédures de développement.
+Ce document définit les règles de contribution du programme C-Learning v5.0.0.
+Il impose un cadre strict, professionnel et sécurisé pour garantir la qualité
+du code, la cohérence pédagogique et la robustesse logicielle du projet.
 
-== 🪖 Code de conduite
-- Respect du style pédagogique du projet
-- Respect des bonnes pratiques C
-- Respect des règles de sécurité (voir SECURITY.adoc)
+Toute contribution doit respecter les normes MASTER CLASS.
+
+------------------------------------------------------------
+== 🪖 Code de conduite (Quantum-Era)
+------------------------------------------------------------
+
+- Respect absolu du style pédagogique du projet
+- Respect strict des bonnes pratiques C (voir COURSE.adoc)
+- Respect des règles de sécurité MASTER CLASS (voir SECURITY.adoc)
 - Aucun code non testé ne doit être poussé sur `main`
+- Aucun warning n’est toléré
+- Aucun pointeur non vérifié n’est accepté
+- Aucun module non documenté n’est validé
 
-== 🧱 Structure des branches
-- `main` : version stable
-- `developp` : développement actif
+------------------------------------------------------------
+== 🧱 Structure des branches (v5.0.0)
+------------------------------------------------------------
+
+- `main` : version stable, production
+- `developp` : développement actif, staging
 - `feature/<nom>` : nouvelles fonctionnalités
 - `fix/<nom>` : corrections
+- `experiment/<nom>` : prototypes avancés (MASTER CLASS)
 
-== 🔧 Procédure pour contribuer
+Règle : **aucun commit direct sur `main` ou `developp`**.
+
+------------------------------------------------------------
+== 🔧 Procédure pour contribuer (workflow militaire-tech)
+------------------------------------------------------------
 
 === 1. Créer une branche
 [source,bash]
@@ -30,17 +48,32 @@ git checkout -b feature/nom_de_la_feature
 
 === 2. Ajouter du code
 - Code C clair, commenté, pédagogique
-- Respect des standards C11
-- Compilation obligatoire avec :
+- Respect strict du standard C11
+- Respect des règles de sécurité MASTER CLASS
+- Respect des patterns d’architecture (v4.0)
+- Respect des modules (src/basic → src/masterclass)
+
+Compilation obligatoire :
 [source,bash]
 ----
-gcc -Wall -Wextra -Werror -std=c11
+gcc -Wall -Wextra -Werror -std=c11 file.c -o file
+----
+
+Compilation sécurisée :
+[source,bash]
+----
+gcc -Wall -Wextra -Werror -O2 \
+    -fstack-protector-all -D_FORTIFY_SOURCE=2 \
+    -Wshadow -Wconversion -Wdouble-promotion \
+    -std=c11 file.c -o file
 ----
 
 === 3. Tests
 - Tous les fichiers doivent compiler sans warnings
 - Les exercices doivent fonctionner
 - Les modules avancés doivent être testés avec Valgrind
+- Les modules MASTER CLASS doivent être testés avec ASan ou UBSan
+- Les bibliothèques doivent être testées avec cppcheck
 
 === 4. Commit propre
 [source,bash]
@@ -48,35 +81,88 @@ gcc -Wall -Wextra -Werror -std=c11
 git commit -m "feat: ajout module mémoire dynamique"
 ----
 
-=== 5. Pull Request
+Règles :
+- message clair
+- préfixe obligatoire : feat / fix / refactor / docs / security / optimize
+- un commit = une modification logique
+
+=== 5. Pull Request (PR)
 - PR vers `developp`
-- Description claire
-- Checklist complétée
+- Description claire et structurée
+- Checklist MASTER CLASS complétée
+- Tests fournis
+- Documentation fournie
 - Aucun merge direct vers `main` sans validation
 
-== 🧪 Style de code
-- Indentation : 4 espaces
+Checklist obligatoire :
+- [ ] Compilation sans warnings
+- [ ] Tests Valgrind / ASan / UBSan
+- [ ] Analyse cppcheck
+- [ ] Documentation mise à jour
+- [ ] Sécurité validée
+- [ ] Reviewer approuvé
+
+------------------------------------------------------------
+== 🧪 Style de code (v5.0.0)
+------------------------------------------------------------
+
+- Indentation : **4 espaces**
 - Noms de variables explicites
 - Pas de variables globales inutiles
-- Pas de magie (valeurs non expliquées)
+- Pas de valeurs magiques
 - Commentaires pédagogiques obligatoires
+- Séparation logique / technique / sécurité
+- Fonctions courtes et cohérentes
+- Headers propres et minimalistes
 
-== 🛡️ Sécurité
-- Interdiction des fonctions dangereuses (gets, strcpy…)
+------------------------------------------------------------
+== 🛡️ Sécurité (MASTER CLASS)
+------------------------------------------------------------
+
+Obligatoire :
 - Vérification systématique des retours de malloc
 - Vérification des limites des tableaux
-- Utilisation de `fgets`, `strncpy`, `snprintf`
+- Vérification des pointeurs NULL
+- Utilisation de `fgets`, `snprintf`, `strncpy` sécurisé
+- Interdiction des fonctions dangereuses :
+  - gets()
+  - strcpy()
+  - strcat()
+  - sprintf()
+  - scanf("%s")
+  - atoi()
 
-== 📚 Documentation
+------------------------------------------------------------
+== 📚 Documentation (v5.0.0)
+------------------------------------------------------------
+
 Toute nouvelle fonctionnalité doit être documentée dans :
 - `docs/COURSE.adoc`
 - `docs/README.adoc`
+- `docs/INSTALL.adoc`
+- `docs/SECURITY.adoc`
 - `CHANGELOG.md`
 - `ROADMAP.md`
+- `VERSION.adoc`
 
-== 🚀 Publication
+Aucun module non documenté n’est accepté.
+
+------------------------------------------------------------
+== 🚀 Publication (MASTER CLASS)
+------------------------------------------------------------
+
 Les versions stables sont publiées uniquement sur `main` après :
+
 - Validation du code
 - Validation des tests
+- Validation sécurité
+- Validation architecture
 - Mise à jour du CHANGELOG
 - Mise à jour de VERSION.adoc
+- Revue finale Quantum-Era
+
+------------------------------------------------------------
+== 📜 Conclusion
+Ce document constitue la doctrine officielle de contribution du projet
+C-Learning v5.0.0 MASTER CLASS. Toute violation entraîne un rejet automatique
+de la contribution.
